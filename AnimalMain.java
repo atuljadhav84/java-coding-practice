@@ -1,27 +1,18 @@
-
-class Animal
-{
-    void sound()
-    {
-        System.out.println("Animal Sound");
+class Animal {
+    Animal get() {
+        return new Animal();
     }
 }
-
-class Dog extends Animal
-{
+class Dog extends Animal {
     @Override
-    void sound()
-    {
-        System.out.println("Dog Barks");
+    Dog get() {
+        return new Dog();
     }
 }
-
-public class AnimalMain
-{
-    public static void main(String args[])
-    {
-        Animal obj = new Dog();
-
-        obj.sound();
+public class AnimalMain {
+    public static void main(String[] args) {
+        Dog d = new Dog();
+        Dog obj = d.get();
+        System.out.println(obj);
     }
 }
